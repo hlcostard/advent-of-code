@@ -1,4 +1,4 @@
-package main
+package day1
 
 import (
 	"bufio"
@@ -8,12 +8,12 @@ import (
   "time"
 )
 
-func main() {
+func Solve() {
 
   start := time.Now()
   sum := 0
 
-  file, err := os.Open("input2.txt")
+  file, err := os.Open("day1/input2.txt")
   if err != nil {
     fmt.Printf("error reading file %v\n", err)
   }
