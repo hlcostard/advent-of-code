@@ -13,7 +13,7 @@ func Solve() {
   start := time.Now()
   sum := 0
 
-  file, err := os.Open("day1/input2.txt")
+  file, err := os.Open("input/day1-p")
   if err != nil {
     fmt.Printf("error reading file %v\n", err)
   }
@@ -32,7 +32,7 @@ func Solve() {
   }
 
   elapsed := time.Since(start)
-  fmt.Printf("the result is %v, time: %v \n", sum, elapsed)
+  fmt.Printf("Day 1 result: %v, time elapsed: %v \n", sum, elapsed)
 }
 
 func getNumbers(input string) int {

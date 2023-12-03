@@ -13,7 +13,7 @@ func Solve() {
 
   start := time.Now()
 
-  file, err := os.Open("input/day2-p1")
+  file, err := os.Open("input/day2-p")
   if err != nil {
     fmt.Printf("error reading file %v\n", err)
   }
@@ -22,13 +22,13 @@ func Solve() {
   scanner := bufio.NewScanner(file)
 
   sum := 0
+  powerSum := 0
 
   for scanner.Scan() {
     line := scanner.Text()
-    // part 1
-    // sum = sum + possibleGame(line)
 
-    sum = sum + powerCubes(line)
+    sum = sum + possibleGame(line)
+    powerSum = powerSum + powerCubes(line)
   }
 
   if err := scanner.Err(); err != nil {
@@ -36,7 +36,8 @@ func Solve() {
   }
 
   elapsed := time.Since(start)
-  fmt.Printf("result: %v, time elapsed: %v \n", sum, elapsed)
+  fmt.Printf("Day 2 part 1: %v, time elapsed: %v \n", sum, elapsed)
+  fmt.Printf("Day 2 part 2: %v, time elapsed: %v \n", powerSum, elapsed)
 }
 
 // part 1
