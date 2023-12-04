@@ -36,8 +36,8 @@ func Solve() {
   }
 
   elapsed := time.Since(start)
-  fmt.Printf("Day 2 part 1: %v \n", sum)
-  fmt.Printf("Day 2 part 2: %v, time elapsed: %v \n", powerSum, elapsed)
+  fmt.Printf("Day 02 part 1 %v\t", sum)
+  fmt.Printf("part 2 %v \ttime %v \n", powerSum, elapsed)
 }
 
 // part 1

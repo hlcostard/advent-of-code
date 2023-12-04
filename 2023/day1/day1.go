@@ -12,6 +12,7 @@ func Solve() {
 
   start := time.Now()
   sum := 0
+  sum2 := 0
 
   file, err := os.Open("input/day1")
   if err != nil {
@@ -24,7 +25,8 @@ func Solve() {
 
   for scanner.Scan() {
     line := scanner.Text()
-    sum = sum + getNumbers(line)
+    sum += getNumbers(line, 1)
+    sum2 += getNumbers(line, 2)
   }
 
   if err := scanner.Err(); err != nil {
@@ -32,16 +34,31 @@ func Solve() {
   }
 
   elapsed := time.Since(start)
-  fmt.Printf("Day 1 part 2: %v, time elapsed: %v \n", sum, elapsed)
+  fmt.Printf("Day 01 part 1 %v\t", sum)
+  fmt.Printf("part 2 %v \ttime %v \n", sum2, elapsed)
 }
 
-func getNumbers(input string) int {
+func getNumbers(input string, part int) int {
 
   // comment the line with the numbers name to solve part1
-  numbers := [20]string{ 
+  numbersPart1 := [10]string{ 
+    "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+  }
+  numbersPart2 := [20]string{ 
     "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
     "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
   }
+
+  var numbers []string
+
+  for i := 0; i < 10 * part; i++ {
+    if part == 1 {
+      numbers = append(numbers, numbersPart1[i])
+    } else {
+      numbers = append(numbers, numbersPart2[i])
+    }
+  }
+
 
   var first int
   var last int

@@ -22,8 +22,8 @@ func Solve() {
   part2 := gearRatios(lines)
 
   elapsed := time.Since(start)
-  fmt.Printf("Day 3 part 1: %v \n", part1)
-  fmt.Printf("Day 3 part 2: %v, time elapsed: %v \n", part2, elapsed)
+  fmt.Printf("Day 03 part 1 %v\t", part1)
+  fmt.Printf("part 2 %v\ttime %v \n", part2, elapsed)
 }
 
 type number struct {

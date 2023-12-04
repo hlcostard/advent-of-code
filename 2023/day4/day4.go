@@ -22,8 +22,8 @@ func Solve() {
   part2 := winningCards(lines)
 
   elapsed := time.Since(start)
-  fmt.Printf("Day 4 part 1: %v \n", part1)
-  fmt.Printf("Day 4 part 2: %v, time elapsed: %v \n", part2, elapsed)
+  fmt.Printf("Day 04 part 1 %v\t", part1)
+  fmt.Printf("part 2 %v\ttime: %v \n", part2, elapsed)
 }
 
 func winningNumbers(input []string) int {
@@ -61,6 +61,7 @@ type card struct {
 func winningCards(input []string) int {
 
   cards := []card{}
+  totalCards := 0
 
   for i := 1; i <= len(input); i++ {
     cards = append(cards, card{ cardNum: strconv.Itoa(i), amount: 1})
@@ -79,11 +80,7 @@ func winningCards(input []string) int {
         cards[i+count].amount = cards[i+count].amount + 1 * cards[i].amount
       }
     }
-  }
-
-  totalCards := 0
-  for _, card := range cards {
-    totalCards += card.amount
+    totalCards += cards[i].amount
   }
 
   return totalCards
