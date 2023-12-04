@@ -23,7 +23,7 @@ func Solve() {
 
   elapsed := time.Since(start)
   fmt.Printf("Day 04 part 1 %v\t", part1)
-  fmt.Printf("part 2 %v\ttime: %v \n", part2, elapsed)
+  fmt.Printf("part 2 %v\ttime %v \n", part2, elapsed)
 }
 
 func winningNumbers(input []string) int {
