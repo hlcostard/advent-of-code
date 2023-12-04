@@ -13,7 +13,7 @@ func Solve() {
 
   start := time.Now()
 
-  lines, err := utils.ReadLines("input/day3-p")
+  lines, err := utils.ReadLines("input/day3")
   if err != nil {
     fmt.Printf("error reading file %v\n", err)
   }
@@ -22,7 +22,7 @@ func Solve() {
   part2 := gearRatios(lines)
 
   elapsed := time.Since(start)
-  fmt.Printf("Day 3 part 1: %v, time elapsed: %v \n", part1, elapsed)
+  fmt.Printf("Day 3 part 1: %v \n", part1)
   fmt.Printf("Day 3 part 2: %v, time elapsed: %v \n", part2, elapsed)
 }
 
@@ -83,7 +83,6 @@ func gearRatios(input []string) int {
         }
       }
     }
-    fmt.Println(num1, num2)
     sum += num1 * num2
   }
 

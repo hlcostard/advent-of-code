@@ -13,7 +13,7 @@ func Solve() {
 
   start := time.Now()
 
-  file, err := os.Open("input/day2-p")
+  file, err := os.Open("input/day2")
   if err != nil {
     fmt.Printf("error reading file %v\n", err)
   }
@@ -36,7 +36,7 @@ func Solve() {
   }
 
   elapsed := time.Since(start)
-  fmt.Printf("Day 2 part 1: %v, time elapsed: %v \n", sum, elapsed)
+  fmt.Printf("Day 2 part 1: %v \n", sum)
   fmt.Printf("Day 2 part 2: %v, time elapsed: %v \n", powerSum, elapsed)
 }
 
