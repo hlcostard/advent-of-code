@@ -1,4 +1,4 @@
-package day3
+package solutions
 
 import (
 	"fmt"
@@ -9,11 +9,11 @@ import (
 	"aoc2023/utils"
 )
 
-func Solve() {
+func Day3() {
 
   start := time.Now()
 
-  lines, err := utils.ReadLines("input/day3")
+  lines, err := utils.ReadLines("input/day3.txt")
   if err != nil {
     fmt.Printf("error reading file %v\n", err)
   }
@@ -22,8 +22,8 @@ func Solve() {
   part2 := gearRatios(lines)
 
   elapsed := time.Since(start)
-  fmt.Printf("Day 03 part 1 %v\t", part1)
-  fmt.Printf("part 2 %v\ttime %v \n", part2, elapsed)
+  fmt.Printf("Day 03 part1 %v\t", part1)
+  fmt.Printf("part2 %v\ttime %v \n", part2, elapsed)
 }
 
 type number struct {

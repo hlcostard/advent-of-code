@@ -1,15 +1,11 @@
 package main
 
-import (
-	"aoc2023/day1"
-	"aoc2023/day2"
-	"aoc2023/day3"
-	"aoc2023/day4"
-)
+import "aoc2023/solutions"
 
 func main() {
-  day1.Solve()
-  day2.Solve()
-  day3.Solve()
-  day4.Solve()
+  solutions.Day1()
+  solutions.Day2()
+  solutions.Day3()
+  solutions.Day4()
+  solutions.Day5()
 }

@@ -1,4 +1,4 @@
-package day1
+package solutions
 
 import (
 	"bufio"
@@ -8,13 +8,13 @@ import (
   "time"
 )
 
-func Solve() {
+func Day1() {
 
   start := time.Now()
   sum := 0
   sum2 := 0
 
-  file, err := os.Open("input/day1")
+  file, err := os.Open("input/day1.txt")
   if err != nil {
     fmt.Printf("error reading file %v\n", err)
   }
@@ -34,8 +34,8 @@ func Solve() {
   }
 
   elapsed := time.Since(start)
-  fmt.Printf("Day 01 part 1 %v\t", sum)
-  fmt.Printf("part 2 %v \ttime %v \n", sum2, elapsed)
+  fmt.Printf("Day 01 part1 %v\t", sum)
+  fmt.Printf("part2 %v \ttime %v \n", sum2, elapsed)
 }
 
 func getNumbers(input string, part int) int {

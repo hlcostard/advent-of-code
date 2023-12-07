@@ -1,4 +1,4 @@
-package day4
+package solutions
 
 import (
 	"aoc2023/utils"
@@ -9,11 +9,11 @@ import (
 	"time"
 )
 
-func Solve() {
+func Day4() {
 
   start := time.Now()
 
-  lines, err := utils.ReadLines("input/day4")
+  lines, err := utils.ReadLines("input/day4.txt")
   if err != nil {
     fmt.Printf("error reading file %v\n", err)
   }
@@ -22,8 +22,8 @@ func Solve() {
   part2 := winningCards(lines)
 
   elapsed := time.Since(start)
-  fmt.Printf("Day 04 part 1 %v\t", part1)
-  fmt.Printf("part 2 %v\ttime %v \n", part2, elapsed)
+  fmt.Printf("Day 04 part1 %v\t", part1)
+  fmt.Printf("part2 %v\ttime %v \n", part2, elapsed)
 }
 
 func winningNumbers(input []string) int {
@@ -31,7 +31,7 @@ func winningNumbers(input []string) int {
   points := 0
 
   for _, line := range input {
-    fields := strings.FieldsFunc(line, split)
+    fields := strings.FieldsFunc(line, splitDay4)
     winning := strings.Fields(fields[1])
     numbers := strings.Fields(fields[2])
 
@@ -68,7 +68,7 @@ func winningCards(input []string) int {
   }
 
   for i, line := range input {
-    fields := strings.FieldsFunc(line, split)
+    fields := strings.FieldsFunc(line, splitDay4)
     winning := strings.Fields(fields[1])
     numbers := strings.Fields(fields[2])
 
@@ -86,7 +86,7 @@ func winningCards(input []string) int {
   return totalCards
 }
 
-func split(c rune) bool {
+func splitDay4(c rune) bool {
   return c == ':' || c == '|' 
 }
 

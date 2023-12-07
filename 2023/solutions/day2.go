@@ -1,4 +1,4 @@
-package day2
+package solutions
 
 import (
 	"bufio"
@@ -9,11 +9,11 @@ import (
 	"time"
 )
 
-func Solve() {
+func Day2() {
 
   start := time.Now()
 
-  file, err := os.Open("input/day2")
+  file, err := os.Open("input/day2.txt")
   if err != nil {
     fmt.Printf("error reading file %v\n", err)
   }
@@ -36,8 +36,8 @@ func Solve() {
   }
 
   elapsed := time.Since(start)
-  fmt.Printf("Day 02 part 1 %v\t", sum)
-  fmt.Printf("part 2 %v \ttime %v \n", powerSum, elapsed)
+  fmt.Printf("Day 02 part1 %v\t", sum)
+  fmt.Printf("part2 %v \ttime %v \n", powerSum, elapsed)
 }
 
 // part 1
@@ -48,7 +48,7 @@ func possibleGame(line string) int {
     "blue": 14,
   }
 
-  fields := strings.FieldsFunc(line, split)
+  fields := strings.FieldsFunc(line, splitDay2)
 
   id, _ := strconv.Atoi(fields[1])
 
@@ -74,7 +74,7 @@ func powerCubes (line string) int {
     "blue": 0,
   }
 
-  fields := strings.FieldsFunc(line, split)
+  fields := strings.FieldsFunc(line, splitDay2)
 
   i := 3
   for i < len(fields) {
@@ -92,7 +92,7 @@ func powerCubes (line string) int {
 
 
 // split the input 
-func split(c rune) bool {
+func splitDay2(c rune) bool {
   return c == ':' || c == ',' || c == ';' || c == ' '
 }
 
