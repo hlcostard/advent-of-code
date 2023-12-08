@@ -16,7 +16,6 @@ func Day7() {
 	if err != nil {
 		fmt.Printf("error reading file %v\n", err)
 	}
-	_ = lines
 
 	part1 := camelCards(lines, 1)
 	part2 := camelCards(lines, 2)
