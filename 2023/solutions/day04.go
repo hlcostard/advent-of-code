@@ -1,19 +1,20 @@
 package solutions
 
 import (
-	"aoc2023/utils"
 	"fmt"
 	"slices"
 	"strconv"
 	"strings"
 	"time"
+
+	"aoc2023/utils"
 )
 
 func Day4() {
 
   start := time.Now()
 
-  lines, err := utils.ReadLines("input/day4.txt")
+  lines, err := utils.ReadLines("input/day04")
   if err != nil {
     fmt.Printf("error reading file %v\n", err)
   }

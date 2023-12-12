@@ -14,7 +14,7 @@ func Day1() {
   sum := 0
   sum2 := 0
 
-  file, err := os.Open("input/day1.txt")
+  file, err := os.Open("input/day01")
   if err != nil {
     fmt.Printf("error reading file %v\n", err)
   }

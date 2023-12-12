@@ -13,7 +13,7 @@ func Day3() {
 
   start := time.Now()
 
-  lines, err := utils.ReadLines("input/day3.txt")
+  lines, err := utils.ReadLines("input/day03")
   if err != nil {
     fmt.Printf("error reading file %v\n", err)
   }

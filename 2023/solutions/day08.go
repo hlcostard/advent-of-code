@@ -11,7 +11,7 @@ import (
 func Day8() {
 	start := time.Now()
 
-	lines, err := utils.ReadLines("input/day8.txt")
+	lines, err := utils.ReadLines("input/day08")
 	if err != nil {
 		fmt.Printf("error reading file %v\n", err)
 	}
