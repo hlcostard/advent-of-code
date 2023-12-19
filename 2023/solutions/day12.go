@@ -64,8 +64,6 @@ func hotSpringArrangement(lines [][]rune) (part1 int, part2 int) {
       springs2 = append(springs2, springs...)
       combinations2 = append(combinations2, combinations...)
     }
-    // fmt.Printf("%c - ", springs2)
-    // fmt.Println(combinations2)
 
     sum1 += springCheck(springs, combinations)
     sum2 += springCheck(springs2, combinations2)
