@@ -1,21 +1,20 @@
 package utils
 
 import (
-    "os"
-    "bufio"
+	"bufio"
+	"os"
 )
 
 func ReadLines(path string) ([]string, error) {
     file, err := os.Open(path)
-
     if err != nil {
         return nil, err
     }
     defer file.Close()
 
     var lines []string
-    scanner := bufio.NewScanner(file)
 
+    scanner := bufio.NewScanner(file)
     for scanner.Scan() {
         lines = append(lines, scanner.Text())
     }
@@ -24,18 +23,16 @@ func ReadLines(path string) ([]string, error) {
 }
 
 func ReadRunes(path string) ([][]rune, error) {
-
   file, err := os.Open(path)
   if err != nil {
     return nil, err
   }
   defer file.Close()
 
-  reader := bufio.NewReader(file)
-
   var lines [][]rune
   var line []rune
 
+  reader := bufio.NewReader(file)
   for {
     char, _, err := reader.ReadRune()
     if err != nil {
@@ -53,6 +50,16 @@ func ReadRunes(path string) ([][]rune, error) {
   return lines, nil
 }
 
+func RunesToInt (input [][]rune) [][]int {
+  var lines [][]int
+  var line []int
+  for i := range input {
+    for j := range input {
+      line = append(line, int(input[i][j] - '0'))
+    }
+    lines = append(lines, line)
+    line = []int{}
+  }
 
-
-
+  return lines
+}

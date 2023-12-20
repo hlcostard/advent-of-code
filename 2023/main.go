@@ -17,5 +17,7 @@ func main() {
   // solutions.Day12()
   // solutions.Day13()
   // solutions.Day14()
-  solutions.Day15()
+  // solutions.Day15()
+  // solutions.Day16()
+  solutions.Day17()
 }
